@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>bplaView/materials/Detal(2000mm)_Diffuse_Default.materialdef</file>
+        <file>bplaView/materials/normal.materialdef</file>
+        <file>bplaView/materials/sky.jpg</file>
+        <file>bplaView/materials/sky.materialdef</file>
+        <file>bplaView/models/BPLA1/meshes/Detal(2000mm).mesh</file>
+        <file>bplaView/models/BPLA1/BPLA1.import</file>
+        <file>bplaView/models/coulds/meshes/Cube.001.mesh</file>
+        <file>bplaView/models/coulds/meshes/Cube.002.mesh</file>
+        <file>bplaView/models/coulds/meshes/Cube.mesh</file>
+        <file>bplaView/models/coulds/coulds.import</file>
+        <file>bplaView/presentations/bplaView.uip</file>
+        <file>bplaView/bplaView.uia</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>UAV-view/materials/Detal(2000mm)_Diffuse_Default.materialdef</file>
+        <file>UAV-view/materials/normal.materialdef</file>
+        <file>UAV-view/materials/sky.jpg</file>
+        <file>UAV-view/materials/sky.materialdef</file>
+        <file>UAV-view/models/BPLA1/meshes/Detal(2000mm).mesh</file>
+        <file>UAV-view/models/BPLA1/BPLA1.import</file>
+        <file>UAV-view/models/coulds/meshes/Cube.001.mesh</file>
+        <file>UAV-view/models/coulds/meshes/Cube.002.mesh</file>
+        <file>UAV-view/models/coulds/meshes/Cube.mesh</file>
+        <file>UAV-view/models/coulds/coulds.import</file>
+        <file>UAV-view/presentations/bplaView.uip</file>
+        <file>UAV-view/bplaView.uia</file>
+    </qresource>
+</RCC>

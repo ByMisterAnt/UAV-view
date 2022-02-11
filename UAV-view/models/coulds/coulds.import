@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<UIP Version="1" >
+	<Project Revision="1" >
+		<Graph >
+			<Group id="__import__root__" >
+				<Model id="Cube" name="Cube" orientation="Right Handed" position="33.9649 13.6264 352.595" rotation="-90 0 0" rotationorder="XYZr" scale="100 100 100" sourcepath="meshes/Cube.mesh" >
+					<Material id="normal" name="normal" blendmode="Normal" diffuse="0.8 0.8 0.8 1" emissivepower="0" opacity="100" specularamount="0" specularroughness="25" />
+				</Model>
+				<Model id="Cube.001" name="Cube.001" orientation="Right Handed" position="167.787 258.068 1141.36" rotation="-90 0 0" rotationorder="XYZr" scale="100 100 100" sourcepath="meshes/Cube.001.mesh" >
+					<Material id="normal_0001" name="normal" blendmode="Normal" diffuse="0.8 0.8 0.8 1" emissivepower="0" opacity="100" specularamount="0" specularroughness="25" />
+				</Model>
+				<Model id="Cube.002" name="Cube.002" orientation="Right Handed" position="69.7267 -664.004 880.181" rotation="-90 0 0" rotationorder="XYZr" scale="100 100 100" sourcepath="meshes/Cube.002.mesh" >
+					<Material id="normal_0002" name="normal" blendmode="Normal" diffuse="0.8 0.8 0.8 1" emissivepower="0" opacity="100" specularamount="0" specularroughness="25" />
+				</Model>
+			</Group>
+		</Graph>
+		<Import SrcFile="../../../../modelsForApps/cloud/coulds.fbx" ImageDir="maps" MeshDir="meshes" >
+			<Mesh >
+				<Source >Cube</Source>
+				<Dest >meshes/Cube.mesh</Dest>
+			</Mesh>
+			<Mesh >
+				<Source >Cube.001</Source>
+				<Dest >meshes/Cube.001.mesh</Dest>
+			</Mesh>
+			<Mesh >
+				<Source >Cube.002</Source>
+				<Dest >meshes/Cube.002.mesh</Dest>
+			</Mesh>
+		</Import>
+	</Project>
+</UIP>

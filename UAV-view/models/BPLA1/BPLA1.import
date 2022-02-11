@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<UIP Version="1" >
+	<Project Revision="1" >
+		<Graph >
+			<Group id="__import__root__" >
+				<Model id="Detal(2000mm)" name="Detal(2000mm)" orientation="Right Handed" position="-299 0 500" rotation="3.66554e-05 0 0" rotationorder="XYZr" scale="0.5 0.5 0.5" sourcepath="meshes/Detal(2000mm).mesh" >
+					<Material id="Detal(2000mm)_Diffuse_Default" name="Detal(2000mm)_Diffuse_Default" blendmode="Normal" diffuse="0.8 0.8 0.8 1" emissivepower="0" opacity="100" specularamount="0" />
+				</Model>
+			</Group>
+		</Graph>
+		<Import SrcFile="../../../../modelsForApps/plane/BPLA1.fbx" ImageDir="maps" MeshDir="meshes" >
+			<Mesh >
+				<Source >Detal(2000mm)</Source>
+				<Dest >meshes/Detal(2000mm).mesh</Dest>
+			</Mesh>
+		</Import>
+	</Project>
+</UIP>

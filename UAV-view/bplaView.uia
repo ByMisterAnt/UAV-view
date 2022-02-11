@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<application xmlns="http://qt.io/qt3dstudio/uia">
+    <assets initial="UAV-view">
+        <presentation id="UAV-view" src="presentations/bplaView.uip"/>
+        <dataInput metadata="" name="bplaAngles" type="Vector3"/>
+    </assets>
+</application>
