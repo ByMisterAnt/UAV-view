@@ -1,11 +1,12 @@
-
+﻿
 //switch when build portable version
 #include <QtStudio3D/qstudio3dglobal.h>
 //#include <qstudio3dglobal.h>
 #include <QQmlContext>
 #include "appengine.h"
 
-#include <QGuiApplication>
+#include <QtWidgets/QApplication>
+#include <QtQuick/QQuickView>
 #include <QQmlApplicationEngine>
 
 #ifdef USE_EMBEDDED_FONTS
@@ -19,7 +20,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
 
-    QGuiApplication app(argc, argv);
+    QApplication app(argc, argv);
 
     QSurfaceFormat::setDefaultFormat(Q3DS::surfaceFormat());
 

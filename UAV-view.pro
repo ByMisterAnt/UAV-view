@@ -1,4 +1,4 @@
-QT += core printsupport gui quick quickwidgets widgets studio3d serialport
+QT += core printsupport gui quick quickwidgets widgets studio3d serialport charts
 
 CONFIG += c++11
 
@@ -27,3 +27,5 @@ HEADERS += \
     appengine.h \
     control.h \
     serreceiver.h
+
+DISTFILES +=

@@ -1,4 +1,4 @@
-#ifndef APPCORE_H
+﻿#ifndef APPCORE_H
 #define APPCORE_H
 
 #include <QObject>
@@ -16,6 +16,7 @@ public:
 signals:
     // Сигнал для передачи данных в qml-интерфейс
     void sendToQml(QVector<double> count);
+    void plotting(QVector<double> count);
 
 public slots:
 

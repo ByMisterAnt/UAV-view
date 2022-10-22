@@ -1,17 +1,18 @@
-import QtQuick 2.15
+﻿import QtQuick 2.15
 import QtQuick.Window 2.15
 
 import QtQuick3D 1.15
 import QtStudio3D.OpenGL 2.5
 import QtQuick.Controls 2.15
+import QtCharts 2.3
 
 ApplicationWindow
 {
 
 id: root
 
-    width: 1280
-    height: 720
+    width: 1920
+    height: 1080
     visible: true
 
 
@@ -87,6 +88,56 @@ id: root
             }
     }
 
+    CustomChart
+    {
+        id: heightChartP
+
+        x: root.width - heightChart.width;
+        y: 0;
+
+        width: 600
+        height: 200
+
+        chartColor: "red"
+
+    }
+    CustomChart
+    {
+        id: heightChartR
+
+        x: root.width - heightChart.width;
+        y: heightChartR.height;
+
+        width: 600
+        height: 200
+
+        chartColor: "blue"
+
+    }
+    CustomChart
+    {
+        id: heightChartY
+
+        x: root.width - heightChart.width;
+        y: 2*heightChartY.height;
+
+        width: 600
+        height: 200
+
+        chartColor: "green"
+
+    }
+
+
+
+
+    function add_value(time, value, value1, value2)//, lineNumber, lineColor )
+        {
+            heightChartP.add(time, value);
+            heightChartR.add(time, value1);
+            heightChartY.add(time, value2);
+        }
+
     Connections
     {
 
@@ -101,9 +152,21 @@ id: root
             studio3D.yaw = a[2];
 
         }
+
+        function onPlotting(count)
+        {
+            var a = count;
+            add_value(a[0], a[1], a[2], a[3]);
+        }
     }
 
 
 }
 
 
+
+/*##^##
+Designer {
+    D{i:0;formeditorZoom:0.33}
+}
+##^##*/

@@ -1,4 +1,4 @@
-#ifndef SERRECEIVER_H
+﻿#ifndef SERRECEIVER_H
 #define SERRECEIVER_H
 
 #include <QObject>
@@ -11,8 +11,8 @@
 
 #include <QDebug>
 #include <QThread>
-
 #include <QVector>
+#include <QTimer>
 
 #include "control.h"
 
@@ -25,23 +25,28 @@ public:
     explicit serReceiver(QObject *parent = nullptr);
 
     void run();
-
     void set_port_name(QString port_name);
 
     QString port;
+    QTimer *timer;
+
+    double time = 0;
+    float yaw = 0;
+    float pitch = 0;
+    float roll = 0;
+
+    int hasRead = 0;
 
 signals:
 
     void com_msg(QVector<double> yaw);
-/*
-private:
+    void plot_msg(QVector<double> yaw);
 
-    Integral I_yaw, I_pitch, I_roll;
+public slots:
 
-    double _err_measure = 0.8;  // примерный шум измерений
-    double _q = 0.1;   // скорость изменения значений 0.001-1, варьировать самому
+    void go_plot();
+    void update();
 
-    double simpleKalman(double newVal, double &_err_estimate, double &_last_estimate, double _err_measure, double _q);*/
 };
 
 #endif // SERRECEIVER_H

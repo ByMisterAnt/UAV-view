@@ -1,11 +1,22 @@
-#include "SerialPort.cpp"
+﻿#include "SerialPort.cpp"
 #include "serreceiver.h"
+#include <QTimer>
 
-#define DATA_LENGTH 30
+#define DATA_LENGTH 32
 
 serReceiver::serReceiver(QObject *parent) :
     QThread { parent }
-{}
+{
+        timer = new QTimer(this);
+
+        connect(timer, SIGNAL(timeout()), this, SLOT(go_plot()));
+
+        timer->start(200);
+
+        QTimer *secTimer = new QTimer(this);
+        connect(secTimer, SIGNAL(timeout()), this, SLOT(update()));
+        secTimer->start(200);
+}
 
 void serReceiver::set_port_name(QString port_name)
 {
@@ -16,16 +27,21 @@ void serReceiver::set_port_name(QString port_name)
 
 }
 
+void serReceiver::go_plot()
+{
+    emit plot_msg(QVector<double>{static_cast<double>(time), static_cast<double>(pitch), static_cast<double>(roll), static_cast<double>(yaw)});
+}
+
+void serReceiver::update()
+{
+    time += 0.2;
+}
+
 void serReceiver::run()
 {
-
-    qDebug() << port << "ggg";
-
     std::string S("\\\\.\\");
 
     S += port.toStdString();
-
-    float yaw = 0, pitch = 0, roll = 0;
 
     SerialPort *board;
 
@@ -38,26 +54,31 @@ void serReceiver::run()
 while (board->isConnected())
 {
 
-      int hasRead = board->readSerialPort(receivedString, DATA_LENGTH);
+      hasRead = board->readSerialPort(receivedString, DATA_LENGTH);
 
       if (hasRead)
       {
 
         std::string S(receivedString);
 
-        std::replace(S.begin(), S.end(), ',', ' ');
+        //std::replace(S.begin(), S.end(), ',', ' ');
 
         std::stringstream ss(S);
 
         copy(std::istream_iterator<int>(ss), {}, back_inserter(v));
 
-        sscanf(receivedString, "%f,%f,%f\n", &roll, &pitch, &yaw);
+        sscanf(receivedString, "%f %f %f\n", &roll, &pitch, &yaw);
+
+        if ( ( roll > 90 || roll < -90 || pitch > 90 || pitch < 90 ) )
+        {
+            emit com_msg({static_cast<double>(pitch), static_cast<double>(roll), static_cast<double>(yaw), time});
+        }
 
         v.clear();
 
-        emit com_msg({static_cast<double>(pitch), static_cast<double>(roll), static_cast<double>(yaw)});
-
       }
+
+      hasRead = 0;
 
 }
 board->closeSerial();
