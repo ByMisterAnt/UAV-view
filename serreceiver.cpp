@@ -29,7 +29,10 @@ void serReceiver::set_port_name(QString port_name)
 
 void serReceiver::go_plot()
 {
-    emit plot_msg(QVector<double>{static_cast<double>(time), static_cast<double>(pitch), static_cast<double>(roll), static_cast<double>(yaw)});
+    if ( ready_plot )
+    {
+        emit plot_msg(QVector<double>{static_cast<double>(time), static_cast<double>(-pitch), static_cast<double>(-roll), static_cast<double>(-yaw)});
+    }
 }
 
 void serReceiver::update()
@@ -53,11 +56,11 @@ void serReceiver::run()
 
 while (board->isConnected())
 {
-
-      hasRead = board->readSerialPort(receivedString, DATA_LENGTH);
+      int hasRead = board->readSerialPort(receivedString, DATA_LENGTH);
 
       if (hasRead)
       {
+        ready_plot = 1;
 
         std::string S(receivedString);
 
@@ -77,8 +80,6 @@ while (board->isConnected())
         v.clear();
 
       }
-
-      hasRead = 0;
 
 }
 board->closeSerial();

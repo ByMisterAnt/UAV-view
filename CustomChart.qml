@@ -13,6 +13,7 @@ Item
 
     property string valueAxisXtext: " "
     property string valueAxisYtext: " "
+    property string lblText: " "
 
     property int gg: 0
 
@@ -21,19 +22,37 @@ Item
         //width: parent.width
         //height: parent.height
         anchors.fill: parent
+        gradient: Gradient {
+            orientation: Gradient.Horizontal
+
+            GradientStop {
+                position: 0
+                color: "black"
+            }
+
+            GradientStop {
+                position: 0.95
+                color: "black"
+            }
+
+            GradientStop {
+                position: 0.99
+                color: "#00000000"
+            }
+        }
         color: "black"
 
 
         Text {
             id: plotValue
 
-            x: plotValue.width + 4
+            x: 5
             y: plotValue.height / 2
 
 
             color: chartColor
             text: "0"
-            horizontalAlignment: Text.AlignHCenter
+            horizontalAlignment: Text.AlignLeft
             verticalAlignment: Text.AlignVCenter
             font.pointSize: 28
             minimumPointSize: 34
@@ -51,7 +70,7 @@ Item
     Glow {
         id:glowText
         anchors.fill: plotValue
-        radius: 9
+        radius: 2
         samples: 22
         color: chartColor
         source: plotValue
@@ -138,7 +157,7 @@ Item
             color: chartColor
             axisX: valueAxisX
             axisY: valueAxisY
-            width: 4
+            width: 1
         }
     }
 
@@ -190,7 +209,7 @@ Item
         //seriesY.append(valueAxisX.max-1, height);
         seriesY.append(x, height);
         gg = height;
-        plotValue.text = gg;
+        plotValue.text = lblText + gg;
     }
 }
 

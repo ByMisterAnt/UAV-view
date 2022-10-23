@@ -35,7 +35,7 @@ public:
     float pitch = 0;
     float roll = 0;
 
-    int hasRead = 0;
+    bool ready_plot = 0;
 
 signals:
 

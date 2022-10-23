@@ -14,6 +14,7 @@ id: root
     width: 1920
     height: 1080
     visible: true
+    //visibility: "FullScreen"
 
 
     Studio3D
@@ -96,7 +97,8 @@ id: root
         y: 0;
 
         width: 600
-        height: 200
+        height: parent.height / 3
+        lblText: "Тангаж: "
 
         chartColor: "red"
 
@@ -109,7 +111,8 @@ id: root
         y: heightChartR.height;
 
         width: 600
-        height: 200
+        height: parent.height / 3
+        lblText: "Крен: "
 
         chartColor: "blue"
 
@@ -122,7 +125,8 @@ id: root
         y: 2*heightChartY.height;
 
         width: 600
-        height: 200
+        height: parent.height / 3
+        lblText: "Курс: "
 
         chartColor: "green"
 
