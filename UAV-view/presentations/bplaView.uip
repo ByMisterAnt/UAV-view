@@ -8,7 +8,7 @@
 			<ImageBuffer sourcepath="../materials/sky.jpg" hasTransparency="False" hasOpaquePixels="True" />
 		</BufferData>
 		<Graph >
-			<Scene id="Scene_u52143" backgroundcolor="0.172549 0.490196 1 1" bgcolorenable="True" >
+			<Scene id="Scene_u52143" backgroundcolor="0.0627451 0.0627451 0.0627451 1" bgcolorenable="True" >
 				<Layer id="Layer_u62653" variants="" >
 					<Camera id="Camera2_u18336" />
 					<Group id="ScyScene_u52390" variants="" >
@@ -83,17 +83,17 @@
 				<Add ref="#materials/sky_u15089_diffusemap_u2910" name="diffusemap" importid="" sourcepath="../materials/sky.jpg" subpresentation="" />
 				<State id="Scene-Slide3_u2758" name="Slide3" playthroughto="Next" >
 					<Set ref="#Layer_u62653" endtime="3033" />
-					<Add ref="#Camera2_u18336" name="Camera2" clipfar="8000" clipnear="1" controlledproperty="" endtime="3033" fov="43.72" position="0 216 -857" rotation="14 0 0" />
-					<Add ref="#ScyScene_u52390" name="ScyScene" endtime="3033" position="0 0 0" />
+					<Add ref="#Camera2_u18336" name="Camera2" clipfar="12025" clipnear="1" controlledproperty="" endtime="3033" fov="43.72" position="-265 216 -857" rotation="14 0 0" />
+					<Add ref="#ScyScene_u52390" name="ScyScene" endtime="3033" position="0 -51 823" />
 					<Add ref="#Light_u35552" name="Light" endtime="3033" lightambient="0.0235294 0.0235294 0.0235294 1" position="-576 275 0" rotation="86 90 0" />
 					<Add ref="#BPLA1_u57824" name="BPLA1" controlledproperty="$bplaAngles rotation" endtime="3033" importfile="../models/BPLA1/BPLA1.import" position="0 -85.9852 0" rotation="0 -158.5 0" scale="0.7 0.7 0.7" sourcepath="../models/BPLA1/BPLA1.import" />
 					<Add ref="#Detal(2000mm)_u7210" name="Detal(2000mm)" endtime="3033" importfile="../models/BPLA1/BPLA1.import" />
 					<Add ref="#Detal(2000mm)_Diffuse_Default_u51083" name="Detal(2000mm)_Diffuse_Default" endtime="3033" referencedmaterial="#materials/Detal(2000mm)_Diffuse_Default_u50015" sourcepath="../materials/Detal(2000mm)_Diffuse_Default.materialdef" />
-					<Add ref="#Clouds_u39308" name="Clouds" endtime="3033" position="0 0 485.822" />
+					<Add ref="#Clouds_u39308" name="Clouds" endtime="3033" position="550 0 485.822" />
 					<Add ref="#coulds_u44058" name="coulds" endtime="3033" importfile="../models/coulds/coulds.import" position="290.171 -175.901 139.203" sourcepath="../models/coulds/coulds.import" />
 					<Add ref="#Cube_u43528" name="Cube" endtime="3033" importfile="../models/coulds/coulds.import" position="279.77 13.6264 802.39" rotation="-90 -80.5 1.49662e-05" />
 					<Add ref="#normal_u14336" name="normal" endtime="3033" referencedmaterial="#materials/normal_u34585" sourcepath="../materials/normal.materialdef" />
-					<Add ref="#Light2_u42239" name="Light2" endtime="3033" position="234.431 412.057 0" rotation="12 0 0" />
+					<Add ref="#Light2_u42239" name="Light2" brightness="146" endtime="3033" lightdiffuse="0.388235 0.388235 0.388235 1" position="234.431 412.057 0" rotation="12 0 0" />
 					<Add ref="#coulds2_u50029" name="coulds2" endtime="3033" importfile="../models/coulds/coulds.import" position="-2739.22 -450.951 2025.76" rotation="0 74 0" sourcepath="../models/coulds/coulds.import" />
 					<Add ref="#Cube_u49433" name="Cube" endtime="3033" importfile="../models/coulds/coulds.import" />
 					<Add ref="#normal_u23369" name="normal" endtime="3033" referencedmaterial="#materials/normal_u34585" sourcepath="../materials/normal.materialdef" />
