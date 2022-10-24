@@ -46,7 +46,7 @@ id: root
             {
 
                 name: "bplaAngles"
-                value: Qt.vector3d(studio3D.roll, studio3D.yaw-158.5, studio3D.pitch)
+                value: Qt.vector3d(studio3D.roll, -studio3D.yaw+158.5, studio3D.pitch)
 
             }
 

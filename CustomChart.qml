@@ -61,7 +61,7 @@ Item
     Glow {
         id:glow
         anchors.fill: chartView
-        radius: 9
+        radius: 18
         samples: 22
         color: chartColor
         source: chartView
@@ -70,7 +70,7 @@ Item
     Glow {
         id:glowText
         anchors.fill: plotValue
-        radius: 2
+        radius: 4
         samples: 22
         color: chartColor
         source: plotValue
@@ -86,7 +86,7 @@ Item
     ZoomBlur {
         anchors.fill: chartView
         source: chartView
-        length: 2
+        length: 9
         samples: 20
     }
 
@@ -157,7 +157,7 @@ Item
             color: chartColor
             axisX: valueAxisX
             axisY: valueAxisY
-            width: 1
+            width: 3
         }
     }
 

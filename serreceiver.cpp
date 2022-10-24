@@ -31,7 +31,7 @@ void serReceiver::go_plot()
 {
     if ( ready_plot )
     {
-        emit plot_msg(QVector<double>{static_cast<double>(time), static_cast<double>(-pitch), static_cast<double>(-roll), static_cast<double>(-yaw)});
+        emit plot_msg(QVector<double>{static_cast<double>(time), static_cast<double>(-pitch), static_cast<double>(-roll), static_cast<double>(yaw)});
     }
 }
 
